@@ -1,5 +1,5 @@
-/* HLHf = HAM LOG HF service worker — build 1.5.1 · 2026-11-03 71764ce7 */
-const CACHE='cwc-X71764ce7';
+/* HLHf = HAM LOG HF service worker — build 1.5.1 · 2026-11-03 b72e4969 */
+const CACHE='cwc-Xb72e4969';
 const CORE=['./','index.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE&&k.startsWith('cwc-')).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
